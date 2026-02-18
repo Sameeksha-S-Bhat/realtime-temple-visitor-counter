@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🛕 Temple Visitor Counter</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <div class="logo">🛕</div>
+            <h1>Temple Visitor Counting System</h1>
+            <div class="status" id="systemStatus">
+                <span class="status-dot offline"></span>
+                <span>Offline</span>
+            </div>
+        </header>
+
+        <!-- Main Grid -->
+        <div class="main-grid">
+            <!-- Live Video Feed -->
+            <div class="card video-card">
+                <div class="card-header">
+                    <h2>📹 Live Camera Feed</h2>
+                </div>
+                <div class="video-container">
+                    <img id="videoFeed" src="" alt="Video feed will appear here">
+                    <div class="video-overlay" id="videoOverlay">
+                        <p>Click START to begin counting</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Statistics Panel -->
+            <div class="card stats-card">
+                <div class="card-header">
+                    <h2>📊 Live Statistics</h2>
+                </div>
+                <div class="stats-grid">
+                    <div class="stat-item primary">
+                        <div class="stat-label">Total Visitors Today</div>
+                        <div class="stat-value" id="totalCount">0</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-label">Currently Tracking</div>
+                        <div class="stat-value small" id="trackingCount">0</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-label">Detected Now</div>
+                        <div class="stat-value small" id="detectionCount">0</div>
+                    </div>
+                </div>
+
+                <!-- Control Buttons -->
+                <div class="controls">
+                    <div class="camera-input">
+                        <label>Camera URL:</label>
+                        <input type="text" id="cameraUrl" placeholder="http://192.168.1.100:8080/video"
+                            value="http://192.168.1.100:8080/video">
+                    </div>
+                    <button class="btn btn-start" id="startBtn" onclick="startSystem()">
+                        ▶️ START
+                    </button>
+                    <button class="btn btn-stop" id="stopBtn" onclick="stopSystem()" disabled>
+                        ⏹️ STOP
+                    </button>
+                    <button class="btn btn-reset" id="resetBtn" onclick="resetCount()" disabled>
+                        🔄 RESET
+                    </button>
+                </div>
+            </div>
+
+            <!-- Hourly Data -->
+            <div class="card hourly-card">
+                <div class="card-header">
+                    <h2>⏰ Hourly Report</h2>
+                    <button class="btn-download" onclick="downloadCSV()">
+                        📥 Download CSV
+                    </button>
+                </div>
+                <div class="hourly-list" id="hourlyList">
+                    <p class="empty-state">No data yet. Start counting to see hourly reports.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <p>Temple Visitor Counter v1.0 | Safe & Secure | No Personal Data Stored</p>
+            <p id="timestamp"></p>
+        </footer>
+    </div>
+
+    <script src="/static/script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,56 @@
+# ── Python ────────────────────────────────────────────────────────────────────
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.so
+*.egg
+*.egg-info/
+dist/
+build/
+
+# ── Virtual environments ───────────────────────────────────────────────────────
+venv/
+env/
+.venv/
+.env/
+
+# ── Environment variables ──────────────────────────────────────────────────────
+.env
+.env.local
+
+# ── Model weights (large files — download automatically via ultralytics) ───────
+models/
+*.pt
+*.pth
+*.onnx
+*.engine
+
+# ── Generated data (CSV counts — contains visitor numbers, not for git) ────────
+data/
+
+# ── Logs ──────────────────────────────────────────────────────────────────────
+logs/
+*.log
+
+# ── OS files ──────────────────────────────────────────────────────────────────
+.DS_Store
+.DS_Store?
+Thumbs.db
+desktop.ini
+
+# ── IDE / Editor ──────────────────────────────────────────────────────────────
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# ── Jupyter Notebooks ─────────────────────────────────────────────────────────
+.ipynb_checkpoints/
+*.ipynb
+
+# ── pytest / coverage ─────────────────────────────────────────────────────────
+.pytest_cache/
+.coverage
+htmlcov/
